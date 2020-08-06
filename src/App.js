@@ -8,14 +8,16 @@ function App() {
   const [movie, setMovie] = useState({ ...initialMovieState });
 
   useEffect(() => {
-    document.querySelector(
-      "body"
-    ).style.backgroundImage = `url(https://image.tmdb.org/t/p/original/${movie.movie.backdrop_path})`;
+    document.querySelector("body").style.background = movie.movie.backdrop_path
+      ? `url(https://image.tmdb.org/t/p/original/${movie.movie.backdrop_path})`
+      : "black";
   }, [movie]);
   return (
     <MovieContext.Provider value={{ movie, setMovie }}>
-      <Header />
-      <Movie />
+      <div className="overlay">
+        <Header />
+        {movie.movie.title && <Movie />}
+      </div>
     </MovieContext.Provider>
   );
 }
