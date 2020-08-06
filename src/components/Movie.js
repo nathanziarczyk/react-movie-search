@@ -4,7 +4,7 @@ import { MovieContext } from "../context";
 
 export default function Movie() {
   const { movie } = useContext(MovieContext);
-  console.log(movie);
+
   return (
     <div className="movie-card container">
       <img
@@ -31,10 +31,17 @@ export default function Movie() {
             <span>Duration:</span> <span>{movie.movie.runtime} min</span>
           </p>
           <p>
-            <span>Box Office:</span> <span>${movie.movie.revenue}</span>
+            <span>Box Office:</span>
+            <span>
+              $
+              {movie.movie.revenue
+                .toString()
+                .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+            </span>
           </p>
           <p>
-            <span>Vote Average:</span> <span>{movie.movie.vote_average}</span>
+            <span>Vote Average:</span>
+            <span>{movie.movie.vote_average}/10</span>
           </p>
         </div>
       </div>

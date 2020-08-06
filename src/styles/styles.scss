@@ -29,21 +29,47 @@ body {
 .container {
   width: 80%;
   margin: 0 auto;
+  @media screen and (max-width: 900px) {
+    width: 90%;
+  }
+}
+
+.loading {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.85);
+  z-index: 3;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
 }
 
 .header {
-  position: fixed;
+  position: absolute;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 2rem 0;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
   color: white;
 
+  img {
+    max-width: 150px;
+    max-height: 100%;
+  }
+
   .search {
     width: 30%;
     position: relative;
+    @media screen and (max-width: 900px) {
+      width: 50%;
+    }
     input {
       width: 100%;
       font-size: 1rem;
@@ -86,6 +112,9 @@ body {
   display: grid;
   grid-template-columns: 30% 70%;
   color: white;
+  @media screen and (max-width: 900px) {
+    grid-template-columns: 1fr;
+  }
   img {
     max-height: 100%;
     max-width: 100%;
@@ -97,6 +126,9 @@ body {
     margin-left: 10px;
     display: flex;
     flex-direction: column;
+    @media screen and (max-width: 900px) {
+      margin: 20px 0;
+    }
     justify-content: center;
     h2 {
       text-transform: uppercase;

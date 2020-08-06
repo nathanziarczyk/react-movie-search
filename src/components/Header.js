@@ -1,13 +1,12 @@
 import React from "react";
 
-import { useApiSearch } from "../hooks/useApiSearch";
 import SearchBar from "./SearchBar";
+import svg from "../images/tmdb.svg";
 
 export default function Header() {
-  useApiSearch(550);
   return (
     <div className="header container">
-      <p>N</p>
+      <img src={svg} />
       <SearchBar />
     </div>
   );

@@ -26,7 +26,12 @@ export default function SearchBar() {
   return (
     <div className="search">
       <input type="text" onChange={handleSearchBarChange} />
-      {suggestions && <Suggestions suggestions={suggestions} />}
+      {suggestions && (
+        <Suggestions
+          suggestions={suggestions}
+          setSuggestions={setSuggestions}
+        />
+      )}
     </div>
   );
 }

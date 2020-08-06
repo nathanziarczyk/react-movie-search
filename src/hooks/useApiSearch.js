@@ -1,5 +1,4 @@
 import React from "react";
-import { useEffect } from "react";
 import Axios from "axios";
 
 import { MovieContext } from "../context";
