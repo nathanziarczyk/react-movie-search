@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
+
+import Header from "./components/Header";
+import { MovieContext, initialMovieState } from "./context";
 
 function App() {
+  const [movie, setMovie] = useState({ ...initialMovieState });
   return (
-    <div className="App">
-      <h1>app</h1>
-    </div>
+    <MovieContext.Provider value={{ movie, setMovie }}>
+      <Header />
+    </MovieContext.Provider>
   );
 }
 
