@@ -6,7 +6,10 @@ export default function SearchBar() {
   const [suggestions, setSuggestions] = React.useState(null);
 
   const handleSearchBarChange = (e) => {
-    if (e.target.value.length < 3) return null;
+    if (e.target.value.length < 3) {
+      setSuggestions(null);
+      return null;
+    }
     const fetchData = async () => {
       try {
         const { data } = await Axios.get(
