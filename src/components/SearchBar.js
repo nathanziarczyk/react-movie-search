@@ -1,9 +1,15 @@
 import React from "react";
 import Axios from "axios";
 import Suggestions from "./Suggestions";
+import { useEffect } from "react";
+import { useApiSearch } from "../hooks/useApiSearch";
 
 export default function SearchBar() {
   const [suggestions, setSuggestions] = React.useState(null);
+  const { fetchData } = useApiSearch();
+  useEffect(() => {
+    fetchData(157336);
+  }, []);
 
   const handleSearchBarChange = (e) => {
     if (e.target.value.length < 3) {

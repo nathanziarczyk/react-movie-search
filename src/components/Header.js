@@ -6,7 +6,7 @@ import svg from "../images/tmdb.svg";
 export default function Header() {
   return (
     <div className="header container">
-      <img src={svg} />
+      <img src={svg} alt="logo" />
       <SearchBar />
     </div>
   );

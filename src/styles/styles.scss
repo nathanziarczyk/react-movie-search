@@ -6,6 +6,7 @@ body {
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 16px;
   background: center/cover no-repeat;
+  background: $dark;
 }
 
 .overlay {
@@ -77,6 +78,7 @@ body {
       background: none;
       border-bottom: 1px solid white;
       color: white;
+      padding: 0.2rem;
       &:focus {
         outline: none;
       }
@@ -119,6 +121,10 @@ body {
     max-height: 100%;
     max-width: 100%;
     margin: auto;
+
+    @media screen and (max-width: 900px) {
+      margin: 20px auto;
+    }
   }
   .content {
     padding: 1rem;

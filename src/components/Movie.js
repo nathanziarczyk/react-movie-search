@@ -1,5 +1,7 @@
 import React from "react";
 import { useContext } from "react";
+import { motion } from "framer-motion";
+
 import { MovieContext } from "../context";
 
 export default function Movie() {
@@ -7,9 +9,11 @@ export default function Movie() {
 
   return (
     <div className="movie-card container">
-      <img
+      <motion.img
         src={`https://image.tmdb.org/t/p/w500/${movie.movie.poster_path}`}
-        alt=""
+        alt="poster"
+        initial={{ opacity: 0, size: 0.5 }}
+        animate={{ opacity: 1, size: 1 }}
       />
       <div className="content">
         <h2>{movie.movie.title}</h2>
@@ -23,7 +27,7 @@ export default function Movie() {
             return `${el.name}, `;
           })}
         </p>
-        <div className="varia">
+        <motion.div className="varia">
           <p>
             <span>Release:</span> <span>{movie.movie.release_date}</span>
           </p>
@@ -43,7 +47,7 @@ export default function Movie() {
             <span>Vote Average:</span>
             <span>{movie.movie.vote_average}/10</span>
           </p>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
