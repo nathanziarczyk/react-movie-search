@@ -17,7 +17,7 @@ function App() {
     <MovieContext.Provider value={{ movie, setMovie }}>
       <div className="overlay">
         <Header />
-        {movie.movie.title && <Movie />}
+        {movie.movie.title && !movie.loading && <Movie />}
         {movie.loading && <Loading />}
       </div>
     </MovieContext.Provider>

@@ -10,6 +10,10 @@ body {
   background: $dark;
 }
 
+.overflow-hidden {
+  overflow: hidden;
+}
+
 .overlay {
   width: 100vw;
   min-height: 100vh;
@@ -142,6 +146,7 @@ body {
     margin-left: 10px;
     display: flex;
     flex-direction: column;
+
     @media screen and (max-width: 900px) {
       margin: 20px 0;
     }

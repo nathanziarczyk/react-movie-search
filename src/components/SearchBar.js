@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { useApiSearch } from "../hooks/useApiSearch";
 
 export default function SearchBar() {
+  const [value, setValue] = React.useState("");
   const [suggestions, setSuggestions] = React.useState(null);
   const { fetchData } = useApiSearch();
   useEffect(() => {
@@ -12,6 +13,7 @@ export default function SearchBar() {
   }, []);
 
   const handleSearchBarChange = (e) => {
+    setValue(e.target.value);
     if (e.target.value.length < 3) {
       setSuggestions(null);
       return null;
@@ -35,11 +37,13 @@ export default function SearchBar() {
         type="text"
         placeholder="Search movie"
         onChange={handleSearchBarChange}
+        value={value}
       />
       {suggestions && (
         <Suggestions
           suggestions={suggestions}
           setSuggestions={setSuggestions}
+          setValue={setValue}
         />
       )}
     </div>
