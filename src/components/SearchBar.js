@@ -31,7 +31,11 @@ export default function SearchBar() {
   };
   return (
     <div className="search">
-      <input type="text" onChange={handleSearchBarChange} />
+      <input
+        type="text"
+        placeholder="Search movie"
+        onChange={handleSearchBarChange}
+      />
       {suggestions && (
         <Suggestions
           suggestions={suggestions}
