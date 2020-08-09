@@ -5,7 +5,7 @@ export default function Loading() {
   return (
     <div className="loading">
       {" "}
-      <PropagateLoader />
+      <PropagateLoader color={"#04d277"} />
     </div>
   );
 }
